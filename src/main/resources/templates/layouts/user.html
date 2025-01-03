@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultrq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Simple Sidebar - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <!--사용자용 css, javascript 추가-->
+        <th:block layout:fragment="script"></th:block>
+        <th:block layout:fragment="css"></th:block>
+    </head>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- 사이드바(주석별로 내용을 줄임처리, side, aside, sidebar)-->
+            <!-- 1. 펼쳐서 시작행을 복사하고 다시 줄임처리후 위에 붙여넣기-->
+            <!-- 2. 조각은 replace를 추가-->
+            <div th:replace="~{fragments/sidebar::sidebar}" class="border-end bg-white" id="sidebar-wrapper"></div>
+            <!--3. 원래 내용을 오려서 fragment(fragments/이름으로 파일 생성) 또는 index.html에 붙여넣기-->
+            <!-- fragments/sidebar.html을 생성 후 붙여넣기-->
+
+            <!-- 페이지 내용-->
+            <div id="page-content-wrapper">
+                <!-- 1,2,3 반복/ 상단 메뉴바(nav, navbar)-->
+                <nav th:replace="~{fragments/navbar::navbar}" class="navbar navbar-expand-lg navbar-light bg-light border-bottom"></nav>
+
+                <!-- 본문 내용(content)-->
+                <!--레이아웃이 본문쪽으로 복사-->
+                <!--6. 선언은 layout:fragment로 선언하고 오려두기-->
+                <div layout:fragment="content" class="container-fluid"></div>
+                        <!--7. index.html을 만들어서 본문내용을 붙여넣기-->
+
+            </div>
+            <!-- ※ replace와 fragment를 추가한 태그에 닫기 태그를 반드시 추가-->
+            <!--저작권처리(footer)-->
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

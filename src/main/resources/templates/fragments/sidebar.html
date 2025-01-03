@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"><!--5. xmlns추가-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <!--4. user.html에 2번에 선언한 이름으로 첫행을 수정-->
+  <!--<div th:replace="~{fragments/sidebar::sidebar}"-->
+  <div th:fragment="sidebar" class="border-end bg-white" id="sidebar-wrapper">
+  <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
+  <div class="list-group list-group-flush">
+    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
+    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
+    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
+    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
+    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
+    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+  </div>
+</div>
+</body>
+</html>
